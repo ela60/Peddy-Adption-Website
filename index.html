@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peddy Website</title>
+    <!-- Font: Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Link: Fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/f811dd765f.js" crossorigin="anonymous"></script>
+    <!-- Link: TailwindCSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#B4F461',
+                        nav: '#F9F7F3',
+                        text: '#111111B3',
+                        
+                    },
+                    fontFamily: {
+                        lato:'Lato'
+                       
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+       @keyframes move-left-right {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100px); /* Adjust distance here */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.loading-bar {
+    animation: move-left-right 1.5s ease-in-out infinite;
+    border-radius: 25px;
+}
+
+      </style>
+
+</head>
+<body  class="font-lato scroll-smooth  mx-auto w-10/12">
+<header>
+    
+  <!-- nav bar -->
+<nav class="flex justify-between items-center space-x-6 py-3">
+    <!-- Logo and brand name -->
+    <div class="flex items-center space-x-2">
+        <img src="images/logo.webp" alt="Logo" class="h-6 w-6 md:h-8 md:w-8"> <!-- Adjust size for medium screens -->
+        <span class="text-lg font-semibold md:text-xl">Peddy</span> <!-- Adjust text size for medium screens -->
+    </div>
+
+    <!-- Middle navigation (hidden on small screens, visible on medium and larger screens) -->
+    <div class="hidden md:flex justify-center space-x-3 items-center">
+        <a href="#" class="text-sm md:text-lg">Home</a> <!-- Adjust text size -->
+        <a href="#" class="text-sm md:text-lg">Shop</a>
+        <a href="#" class="text-sm md:text-lg">Contact</a>
+    </div>
+
+    <!-- Mobile Menu Icon (visible only on small screens) -->
+    <div class="md:hidden">
+        <button id="menu-toggle" class="text-lg">
+            <i class="fa-solid fa-bars"></i> <!-- Hamburger icon for mobile -->
+        </button>
+    </div>
+
+    <!-- User icon (adjust size for medium screens) -->
+    <div class="rounded-full bg-white h-10 w-10 flex justify-center items-center border">
+        <i class="fa-solid fa-user text-lg md:text-xl"></i>
+    </div>
+</nav>
+
+<!-- Mobile Menu (hidden by default, shown when the menu icon is clicked) -->
+<div id="mobile-menu" class="hidden flex flex-col space-y-4 mt-3 md:hidden ">
+    <a href="#" class="text-lg font-bold">Home</a>
+    <a href="#" class="text-lg font-bold">Shop</a>
+    <a href="#" class="text-lg font-bold">Contact</a>
+</div>
+
+<!-- Banner Section -->
+<div  class="hero min-h-screen">
+    <div class="hero-content text-center">
+        <div class="max-w-md mx-auto px-4">
+            <h3 class="text-xl md:text-2xl font-bold">Bringing Families Together ❤️‍🔥</h3>
+            <br>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold">Your Path to Adoption Starts Here</h1>
+            <p class="py-6 text-sm md:text-base lg:text-lg">
+                "There's no bond quite like the one between a pet and their owner. Discover your perfect match from our adoptable pets and experience unconditional love, loyalty, and companionship."
+            </p>
+            <a href="#button-section" class="btn bg-[#0E7A81] text-white px-12 font-bold text-xl">View More</a>
+            <div class="mt-4 lg:w-[650px] lg:-ml-28">
+                <img src="images/pet.webp" alt="" class="w-full h-auto  rounded-lg">
+            </div>
+        </div>
+    </div>
+</div>
+
+</header>
+
+<main>
+   <!-- Button Section -->
+<section id="button-section" class="px-4">
+    <div class="text-center">
+        <h1 class="text-2xl md:text-3xl font-bold">Adopt Your Best Friend</h1>
+        <br>
+        <p class="text-sm md:text-base lg:text-lg">
+            "Every pet deserves a forever home, and your new best friend could be just a click away. <br> By adopting, you not only give a pet a second chance but also gain a companion for life."
+        </p>
+        <br>
+    </div>
+
+    <div id="categories" class="py-3 flex flex-col md:flex-row justify-between items-center">
+        <!-- Add buttons or categories here -->
+    </div>
+</section>
+
+
+     <!-- Adopt Your Best Friend Section -->
+<section id="adoptSection" class="p-6 flex justify-between">
+    <h2 class="text-xl font-bold ">Best Deal For you</h2>
+    <div>
+        <button id="short" class="bg-[#0E7A81] text-white p-3 px-6 font-bold rounded-lg">Sort by Price</button>
+    </div>
+</section>
+
+  
+
+     <!-- Parent grid container -->
+    <section class="container mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4 py-10">
+
+    <!-- Card Section (left side)-->
+    <div id="card" class="col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+       
+    </div>
+
+    <!-- Liked Pets Section (Right Side) -->
+    <div id="like" class="col-span-1  gap-4 p-4 bg-gray-100 rounded-lg shadow-lg font-bold text-[blue]"> Chose Your Pets which Like..!!!
+    <div id="display-like" class=" grid grid-cols-2 gap-2">
+
+    </div>
+   
+</div>
+    </section>
+
+
+     <!-- spinner -->
+
+     <div id="loadingSpinner" class="hidden flex justify-center items-center mb-12">
+        <div class="loading-bar h-4 w-16 bg-blue-500"></div>
+    </div>
+    
+    
+    
+
+  <!-- Adopt Modal -->
+<div id="adoptModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-75 flex justify-center items-center">
+    <div class="bg-white p-6 rounded-lg text-center">
+        <img class="text-center" src="" alt="">
+        <h2 class="text-2xl font-bold">Congrates</h2>
+        <p class="text-xl mt-4 mb-4">Adoption Process is start For Your Pet <br>
+            <span class="font-bold text-4xl" id="countdown">3</span></p>
+        <button id="closeModal" class="hidden bg-blue-500 text-white p-2 rounded-lg">Close</button>
+    </div>
+</div>
+
+
+<!--Details Modal Structure -->
+
+<!-- Open the modal using ID.showModal() method -->
+
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box ">
+    <div id="display-details">
+
+    </div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn btn-primary px-16 text-center font-bold text-xl">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog> 
+   
+</main>
+
+<footer class="bg-[#131313] py-10 px-4 md:px-10 flex flex-col md:flex-row justify-between">
+    <!-- First Column (Logo and Contact Info) -->
+    <div class="text-white mb-6 md:mb-0 md:w-1/3">
+        <div class="flex items-center space-x-2 mb-4">
+            <img src="images/logo.webp" alt="Logo" class="h-8 w-8"> <!-- Adjusted size -->
+            <span class="text-lg font-semibold">Peddy</span>
+        </div>
+        <p class="text-[#FFFFFFE6]">Location: av. Washington 165, NY CA</p>
+        <p class="text-[#FFFFFFE6]">54003</p>
+        <p class="text-[#FFFFFFE6]">Phone: +31 85 964 47 25</p>
+        <p class="text-[#FFFFFFE6]">Email: info@yourdomain.com</p>
+        <p class="text-[#FFFFFFE6]">Openings hours: 9.00 AM - 5.00 PM</p>
+
+        <!-- Social Media Icons -->
+        <div class="flex space-x-4 mt-4">
+            <a href="https://www.facebook.com" target="_blank" class="hover:text-[#3b5998]">
+                <i class="fab fa-facebook-f text-[#3b5998]"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="hover:text-[#1DA1F2]">
+                <i class="fab fa-twitter text-[#1DA1F2]"></i>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" class="hover:text-[#FF0000]">
+                <i class="fab fa-youtube text-[#FF0000]"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="hover:text-[#C13584]">
+                <i class="fab fa-instagram text-[#C13584]"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Second Column (Useful Links) -->
+    <div class="flex flex-col space-y-2 text-white mb-6 md:mb-0 md:w-1/3">
+        <h1 class="text-xl font-semibold">Useful Links</h1>
+        <a href="#" class="text-[#FFFFFF99]">Home</a>
+        <a href="#" class="text-[#FFFFFF99]">About Us</a>
+        <a href="#" class="text-[#FFFFFF99]">Animals</a>
+        <a href="#" class="text-[#FFFFFF99]">Foundation</a>
+        <a href="#" class="text-[#FFFFFF99]">Contact</a>
+    </div>
+
+    <!-- Third Column (Drop a Message) -->
+    <div class="flex flex-col space-y-3 text-white md:w-1/3">
+        <h1 class="text-xl font-semibold">Drop a Message</h1>
+        <input type="email" placeholder="Enter your email" class="border bg-[#FFFFFF0D] p-2 rounded-md w-full" />
+        <button class="bg-[#0E7A81] text-white py-2 px-4 rounded-md hover:bg-blue-600 w-full">Subscribe</button>
+    </div>
+</footer>
+
+<script src="./js/index.js"></script>
+</body>
+</html>
