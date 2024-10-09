@@ -179,9 +179,11 @@ const displayCards = (cards) => {
      <p class="flex items-center"><i class="fas fa-dollar-sign mr-2 text-[#131313B3]"></i> Price:${card.price || 'undefined'}</p>
      <hr>
     
-     <div onclick="loadLikeButton('${card.petId}')" class="flex justify-between items-center mt-4 space-x-3">
+     <div class="flex space-x-3 mt-4 justify-between items-center">
+     <div onclick="loadLikeButton('${card.petId}')" class="flex justify-between items-center  space-x-3">
      <button class="like-btn rounded py-2 px-2 border" data-pet-id="${card.petId}">
      <i class="fas fa-thumbs-up mr-2"></i></button>
+     </div>
      
      <button class="adopt-btn  rounded py-2 px-4 text-[#0E7A81] border font-bold" data-card-id="${card.petId}">
      Adopt</button>
