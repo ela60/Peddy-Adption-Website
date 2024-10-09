@@ -16,7 +16,7 @@ const loadCategories = () => {
 const loadCard = () => {
 
     const spinner = document.getElementById('loadingSpinner');
-    const cardContainer = document.getElementById('card');
+    const cardContainer = document.getElementById('whole-card');
 
     spinner.classList.remove('hidden');
     cardContainer.classList.add('hidden');
@@ -260,7 +260,7 @@ const displayPets = (categories) => {
 
         // create a button
         const button = document.createElement('button');
-        button.classList = "flex space-x-2 p-3 px-14 md:px-6 lg:px-14 border rounded-full bg-[#0E7A81] hover:bg-bg-blue-200 transition duration-300 mb-4";
+        button.classList = "flex space-x-2 p-3 px-12 md:px-6 lg:px-14 border rounded-full bg-[#0E7A81] hover:bg-bg-blue-200 transition duration-300 mb-4";
 
         button.setAttribute('data-id', item.id);
 
